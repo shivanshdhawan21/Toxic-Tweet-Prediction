@@ -37,4 +37,4 @@ def predict_toxic():
     result=model.predict(df)
     return render_template('index.html',result=result[0])
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False,host="0.0.0.0")
