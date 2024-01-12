@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Tweet Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <a class="heading" href="/">Toxic Tweet Predictor</a>
+        {% if result==0 %}
+            <div style="color: rgb(3, 221, 250);">The Tweet is Not Toxic</div>
+        {% elif result==1 %}
+            <div style="color: red;">The Tweet is Toxic</div>
+        {% endif %}
+        <form method="post" action="/predict">
+            <textarea style="font-size:15px; border-radius: 20px;" name="text" rows="10" cols="50"></textarea>
+            <div style="display:flex; justify-content: center;">
+                <input type="submit" name="Predict" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
